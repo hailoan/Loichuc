@@ -2,12 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="@drawable/screen2"
     tools:context="android.hailoan.devpro.app_loichuc.NoiDungTinNhan.TextSMSFragment">
-
     <!-- TODO: Update blank fragment layout -->
     <ListView
-        android:background="#59ec57"
+
         android:id="@+id/listMulti"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

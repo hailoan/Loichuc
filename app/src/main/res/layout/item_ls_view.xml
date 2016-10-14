@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:background="#ff0000"
+        android:background="@android:drawable/screen_background_light_transparent"
         android:paddingLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_img_rc"
             style="@style/text_rc_view"
-            android:textColor="#fff"
+            android:textColor="#FF0000"
             android:textStyle="bold"
             android:text="Hai loan" />
     </RelativeLayout>

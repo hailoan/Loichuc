@@ -37,9 +37,9 @@ public class MultimediaFragment extends Fragment {
     }
     public ArrayList<item_RC_LV> getdatannoel() {
         ArrayList<item_RC_LV> lsdata = new ArrayList<item_RC_LV>();
-        lsdata.add(new item_RC_LV(1, "gian sinh vui ve"));
-        lsdata.add(new item_RC_LV(1, "moi dieu an lan"));
-        lsdata.add(new item_RC_LV(1, "Merry chrismast"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "gian sinh vui ve"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "moi dieu an lan"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "Merry chrismast"));
         return lsdata;
     }
 }

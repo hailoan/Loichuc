@@ -29,6 +29,7 @@ public class Main2_ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
         values = (int) getIntent().getExtras().getSerializable("K");
+        getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_view);
         createDrawer();
@@ -85,10 +86,11 @@ public class Main2_ extends AppCompatActivity {
 
     public ArrayList<item_RC_LV> getdata() {
         ArrayList<item_RC_LV> lsdata = new ArrayList<item_RC_LV>();
-
-        lsdata.add(new item_RC_LV(1, "Giáng sinh"));
-        lsdata.add(new item_RC_LV(1, "lễ Tình yêu"));
-        lsdata.add(new item_RC_LV(1, "mừng năm mới"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "Giáng sinh"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_valentine, "Lễ Tình yêu"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_tet, "Chúc mừng năm mới"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_sinhnhat, "Sinh nhật"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_womenday, "Phụ nữ"));
         return lsdata;
     }
 

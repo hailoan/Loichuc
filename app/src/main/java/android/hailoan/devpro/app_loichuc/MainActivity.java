@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView valentine;
     private ImageView sinhnhat;
     private ImageView nammoi;
-    private ImageView qtphunu;
+
     private ImageView phunuvn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sinhnhat.setOnClickListener(this);
         nammoi = (ImageView) findViewById(R.id.img_nammoi);
         nammoi.setOnClickListener(this);
-        qtphunu = (ImageView) findViewById(R.id.img_qtphunu);
-        qtphunu.setOnClickListener(this);
         phunuvn = (ImageView) findViewById(R.id.img_phunuvn);
         phunuvn.setOnClickListener(this);
 
@@ -68,11 +66,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.img_phunuvn: {
                 m2.putExtra("K",5);
-                startActivityForResult(m2,100);
-                break;
-            }
-            case R.id.img_qtphunu: {
-                m2.putExtra("K",6);
                 startActivityForResult(m2,100);
                 break;
             }

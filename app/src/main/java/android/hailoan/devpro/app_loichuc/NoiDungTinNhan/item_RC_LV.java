@@ -5,8 +5,8 @@ package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
  */
 
 public class item_RC_LV {
-    int img;
-    String ndung;
+    private int img;
+    private String ndung;
 
     public item_RC_LV(int img, String ndung) {
         this.img = img;

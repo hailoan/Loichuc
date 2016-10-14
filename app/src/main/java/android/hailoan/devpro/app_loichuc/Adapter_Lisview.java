@@ -46,9 +46,11 @@ public class Adapter_Lisview extends BaseAdapter {
             view = inflater.inflate(R.layout.item_ls_view, null);
         }
         txt_nd = (TextView) view.findViewById(R.id.txt_ls);
+        img_ls= (ImageView) view.findViewById(R.id.img_ls);
         item_RC_LV s = getItem(i);
         txt_nd.setText(s.getNdung());
         txt_nd.setTag(i);
+        img_ls.setImageResource(s.getImg());
         return view;
     }
 

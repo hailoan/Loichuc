@@ -36,13 +36,14 @@
     </FrameLayout>
 
     <ListView
+
         android:id="@+id/ls_view"
         android:layout_width="280dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#fff"
-        android:divider="#ccc"
-        android:dividerHeight="2dp"
+        android:background="@drawable/b2"
+        android:divider="#ff0000"
+        android:dividerHeight="0.5dp"
         android:paddingRight="10dp">
 
     </ListView>
