@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:background="#ff0000"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_ls"
+            android:layout_width="@dimen/size_img_rc"
+            android:layout_height="@dimen/size_img_rc"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:paddingLeft="10dp"
+            android:id="@+id/txt_ls"
+            android:layout_toRightOf="@+id/img_ls"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_img_rc"
+            style="@style/text_rc_view"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:text="Hai loan" />
+    </RelativeLayout>
+</LinearLayout>

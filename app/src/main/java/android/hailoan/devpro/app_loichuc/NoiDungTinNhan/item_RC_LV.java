@@ -1,0 +1,31 @@
+package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
+
+/**
+ * Created by ThanhHang on 10/13/2016.
+ */
+
+public class item_RC_LV {
+    int img;
+    String ndung;
+
+    public item_RC_LV(int img, String ndung) {
+        this.img = img;
+        this.ndung = ndung;
+    }
+
+    public int getImg() {
+        return img;
+    }
+
+    public void setImg(int img) {
+        this.img = img;
+    }
+
+    public String getNdung() {
+        return ndung;
+    }
+
+    public void setNdung(String ndung) {
+        this.ndung = ndung;
+    }
+}
