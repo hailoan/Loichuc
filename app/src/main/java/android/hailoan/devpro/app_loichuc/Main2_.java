@@ -29,7 +29,6 @@ public class Main2_ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
         values = (int) getIntent().getExtras().getSerializable("K");
-        getSupportActionBar().hide();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_view);
         createDrawer();
