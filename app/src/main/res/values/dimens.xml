@@ -6,6 +6,5 @@
     <dimen name="heigh_land_img">100dp</dimen>
     <dimen name="text_rc">16dp</dimen>
     <dimen name="size_img_rc">50dp</dimen>
-    <dimen name="weight_">200</dimen>
 
 </resources>
