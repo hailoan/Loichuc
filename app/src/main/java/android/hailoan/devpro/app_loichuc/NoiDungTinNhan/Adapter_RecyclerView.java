@@ -21,7 +21,7 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
     private ArrayList<String> lsdata;
     private LayoutInflater inflater;
     private int idimg;
-//cm
+//cmgsyta
     public int getIdimg() {
         return idimg;
     }

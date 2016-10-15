@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:background="@drawable/screen2"
+android:background="@drawable/screen"
     tools:context="android.hailoan.devpro.app_loichuc.NoiDungTinNhan.TextSMSFragment">
 
     <!-- TODO: Update blank fragment layout -->
