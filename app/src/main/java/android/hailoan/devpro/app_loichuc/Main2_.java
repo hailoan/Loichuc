@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,9 +29,11 @@ public class Main2_ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
+
         values = (int) getIntent().getExtras().getSerializable("K");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_view);
         createDrawer();
         createViewPager();
     }
@@ -69,6 +72,7 @@ public class Main2_ extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void createViewPager() {
         pager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
@@ -79,8 +83,6 @@ public class Main2_ extends AppCompatActivity {
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setTabsFromPagerAdapter(adapter);
     }
-
-
 
 
     public ArrayList<item_RC_LV> getdata() {
