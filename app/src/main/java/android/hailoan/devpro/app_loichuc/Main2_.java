@@ -1,14 +1,10 @@
 package android.hailoan.devpro.app_loichuc;
 
-import android.content.Intent;
-import android.graphics.Color;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.Pager_adapter;
-import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.TextSMSFragment;
-import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_listleft;
+import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_RC_LV;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -17,40 +13,26 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
-import java.util.ArrayList;
 public class Main2_ extends AppCompatActivity {
     private int values;
     private ListView ls_view;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
-    private ViewPager pager;
-    private TabLayout tabLayout;
-    private FragmentManager manager;
-    private int vt = 1;
-    private Pager_adapter adapter;
+    ViewPager pager;
+    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
         values = (int) getIntent().getExtras().getSerializable("K");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
-        toolbar.setTitle("");
-        toolbar.setTitleTextColor(Color.RED);
-        createViewPager();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_view);
         createDrawer();
-
+        createViewPager();
     }
 
     public void createDrawer() {
@@ -77,10 +59,6 @@ public class Main2_ extends AppCompatActivity {
     private AdapterView.OnItemClickListener on_item_click = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            values=i+1;
-            adapter=new Pager_adapter(manager,values);
-            adapter.notifyDataSetChanged();
-            pager.invalidate();
             drawerLayout.closeDrawer(ls_view);
         }
     };
@@ -94,21 +72,24 @@ public class Main2_ extends AppCompatActivity {
     public void createViewPager() {
         pager = (ViewPager) findViewById(R.id.view_pager);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        manager = getSupportFragmentManager();
-        adapter = new Pager_adapter(manager, values);
+        FragmentManager manager = getSupportFragmentManager();
+        Pager_adapter adapter = new Pager_adapter(manager);
         pager.setAdapter(adapter);
         tabLayout.setupWithViewPager(pager);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setTabsFromPagerAdapter(adapter);
     }
 
-    public ArrayList<item_listleft> getdata() {
-        ArrayList<item_listleft> lsdata = new ArrayList<item_listleft>();
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Lễ Tình yêu"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Giáng sinh"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Chúc mừng năm mới"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Sinh nhật"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Phụ nữ"));
+
+
+
+    public ArrayList<item_RC_LV> getdata() {
+        ArrayList<item_RC_LV> lsdata = new ArrayList<item_RC_LV>();
+        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "Giáng sinh"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_valentine, "Lễ Tình yêu"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_tet, "Chúc mừng năm mới"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_sinhnhat, "Sinh nhật"));
+        lsdata.add(new item_RC_LV(R.drawable.icon_womenday, "Phụ nữ"));
         return lsdata;
     }
 
