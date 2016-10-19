@@ -17,8 +17,7 @@ import java.util.ArrayList;
  */
 public class MultimediaFragment extends Fragment {
     ListView listMulti;
-    Adapter_Lisview adapter_multi;
-
+    Adapter_fragment adapter_multi;
 
     public MultimediaFragment() {
         // Required empty public constructor
@@ -30,16 +29,40 @@ public class MultimediaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_multimedia, container, false);
         listMulti = (ListView) view.findViewById(R.id.listMulti);
-        adapter_multi = new Adapter_Lisview(getdatannoel(),inflater);
+        adapter_multi = new Adapter_fragment(getdatannoel(),inflater);
         listMulti.setAdapter(adapter_multi);
+
         // Inflate the layout for this fragment
         return view;
     }
-    public ArrayList<item_RC_LV> getdatannoel() {
-        ArrayList<item_RC_LV> lsdata = new ArrayList<item_RC_LV>();
-        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "gian sinh vui ve"));
-        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "moi dieu an lan"));
-        lsdata.add(new item_RC_LV(R.drawable.icon_noel1, "Merry chrismast"));
+    public ArrayList<String> getdatannoel() {
+        ArrayList<String> lsdata = new ArrayList<String>();
+        lsdata.add("{@}\n" +
+                "*{@} {@} {@}*\n" +
+                ":* {@} * {@} * ;*\n" +
+                "' @}* {@} *{@}'\n" +
+                "* ; {@} * ;\n" +
+                "\\ \\ \\ | / / /\n" +
+                "\\ \\ Y / /\n" +
+                "\\ | /\n" +
+                "/()\\\n" +
+                "☆♥14-2♥☆\n" +
+                "chuc e valentine vui ve,\n" +
+                "hah phuc naz!\n" +
+                "»(¯°•.†l0v3U!.•°¯)« \n" +
+                "»™ Forever ™«");
+        lsdata.add(",*\"\"\"\"*, ,*\"\"\"\"*,\n" +
+                "   (0 ' _ ' ) ( '_ ' * )\n" +
+                "=(,,)=(,,)=(,,)=(,,)=!!!\n" +
+                "*(¨`•.•´¨)(¨`•.•´¨)*\n" +
+                "**`•.(¨`•.•´¨)..•´**\n" +
+                "  ***`•.¸.•´*** \n" +
+                "mai mai ben nhau!\n" +
+                "»™ ¶_ove ß@ßY ™«\n" +
+                "`'•.¸(`'•.¸*¤*¸.•'´)¸.•'´\n" +
+                " Happy♥Valentine\n" +
+                "`'•.¸(`'•.¸*¤*¸.•'´)¸.•'´");
+        lsdata.add("Merry chrismast");
         return lsdata;
     }
 }

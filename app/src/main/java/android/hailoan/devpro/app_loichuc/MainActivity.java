@@ -14,12 +14,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView valentine;
     private ImageView sinhnhat;
     private ImageView nammoi;
-
     private ImageView phunuvn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().hide();
         init();
 
     }
@@ -43,14 +43,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent m2=new Intent(MainActivity.this,Main2_.class);;
         switch (view.getId()) {
             case R.id.img_noel: {
-
-                m2.putExtra("K",1);
+                m2.putExtra("K",2);
                 startActivityForResult(m2,100);
                 break;
             }
             case R.id.img_valentine: {
-
-                m2.putExtra("K",2);
+                m2.putExtra("K",1);
                 startActivityForResult(m2,100);
                 break;
             }

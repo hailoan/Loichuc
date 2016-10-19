@@ -4,11 +4,11 @@ package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
  * Created by ThanhHang on 10/13/2016.
  */
 
-public class item_RC_LV {
+public class item_listleft {
     private int img;
     private String ndung;
 
-    public item_RC_LV(int img, String ndung) {
+    public item_listleft(int img, String ndung) {
         this.img = img;
         this.ndung = ndung;
     }

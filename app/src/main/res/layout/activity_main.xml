@@ -20,14 +20,14 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:id="@+id/img_noel"
+            android:id="@+id/img_valentine"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/width_img"
             android:layout_weight="1"
             android:src="@drawable/img_valentine" />
 
         <ImageView
-            android:id="@+id/img_valentine"
+            android:id="@+id/img_noel"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/width_img"
             android:layout_weight="1"
