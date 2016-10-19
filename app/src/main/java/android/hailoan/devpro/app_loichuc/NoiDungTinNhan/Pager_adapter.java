@@ -45,4 +45,6 @@ public class Pager_adapter extends FragmentStatePagerAdapter{
 
         return title;
     }
+
+
 }

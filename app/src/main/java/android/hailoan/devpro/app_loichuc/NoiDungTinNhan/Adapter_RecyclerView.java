@@ -1,15 +1,12 @@
 package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
 
-import android.content.Context;
 import android.content.Intent;
 import android.hailoan.devpro.app_loichuc.R;
 import android.net.Uri;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -61,7 +58,7 @@ public class Adapter_RecyclerView extends RecyclerView.Adapter<Adapter_RecyclerV
         @Override
         public void onClick(View view) {
             String nd= (String) view.getTag();
-            Uri uri=Uri.parse("smsto:"+"0293847");
+            Uri uri=Uri.parse("smsto:"+"0989438622");
             Intent it=new Intent(Intent.ACTION_SENDTO,uri);
             it.putExtra("sms_body",nd);
             view.getContext().startActivity(it);

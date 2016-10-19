@@ -1,5 +1,6 @@
 package android.hailoan.devpro.app_loichuc;
 
+import android.graphics.Color;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.Pager_adapter;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_RC_LV;
 import android.os.Bundle;
@@ -32,7 +33,8 @@ public class Main2_ extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
-
+        toolbar.setTitle("SMS");
+        toolbar.setTitleTextColor(Color.RED);
         values = (int) getIntent().getExtras().getSerializable("K");
         createDrawer();
         createViewPager();
@@ -82,6 +84,8 @@ public class Main2_ extends AppCompatActivity {
         tabLayout.setupWithViewPager(pager);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setTabsFromPagerAdapter(adapter);
+
+
     }
 
 
