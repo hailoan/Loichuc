@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.style.UpdateLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +26,11 @@ import java.util.ArrayList;
 public class TextSMSFragment extends Fragment {
     ListView lsview;
     Adapter_fragment adapter_fragment;
-    private int k;
     private ArrayList<String> lsdata;
-
-    public TextSMSFragment() {
+private int k;
+    public TextSMSFragment(int k) {
         // Required empty public constructor
-
+this.k=k;
     }
 
 
@@ -39,7 +39,6 @@ public class TextSMSFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_text_sm, container, false);
         lsview = (ListView) view.findViewById(R.id.lsviewtxt);
-        k=getArguments().getInt("K");
         switch (k) {
             case 1: {
                 lsdata = getdatannoel();

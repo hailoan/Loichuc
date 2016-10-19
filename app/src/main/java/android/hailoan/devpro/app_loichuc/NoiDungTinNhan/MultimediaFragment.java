@@ -18,9 +18,10 @@ import java.util.ArrayList;
 public class MultimediaFragment extends Fragment {
     ListView listMulti;
     Adapter_fragment adapter_multi;
-
-    public MultimediaFragment() {
+private int k;
+    public MultimediaFragment(int k) {
         // Required empty public constructor
+    this.k=k;
     }
 
 

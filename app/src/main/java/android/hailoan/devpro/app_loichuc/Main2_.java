@@ -1,6 +1,7 @@
 package android.hailoan.devpro.app_loichuc;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.Pager_adapter;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.TextSMSFragment;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_listleft;
@@ -19,7 +20,13 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import java.util.ArrayList;
 public class Main2_ extends AppCompatActivity {
     private int values;
     private ListView ls_view;
@@ -36,8 +43,11 @@ public class Main2_ extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
         values = (int) getIntent().getExtras().getSerializable("K");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.list_view);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
+        toolbar.setTitle("");
+        toolbar.setTitleTextColor(Color.RED);
         createViewPager();
         createDrawer();
 
@@ -70,6 +80,7 @@ public class Main2_ extends AppCompatActivity {
             values=i+1;
             adapter=new Pager_adapter(manager,values);
             adapter.notifyDataSetChanged();
+            pager.invalidate();
             drawerLayout.closeDrawer(ls_view);
         }
     };
