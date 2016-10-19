@@ -27,10 +27,11 @@ public class TextSMSFragment extends Fragment {
     ListView lsview;
     Adapter_fragment adapter_fragment;
     private ArrayList<String> lsdata;
-private int k;
+    private int k;
+
     public TextSMSFragment(int k) {
         // Required empty public constructor
-this.k=k;
+        this.k = k;
     }
 
 

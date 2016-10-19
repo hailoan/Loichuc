@@ -18,10 +18,11 @@ import java.util.ArrayList;
 public class MultimediaFragment extends Fragment {
     ListView listMulti;
     Adapter_fragment adapter_multi;
-private int k;
+    private int k;
+
     public MultimediaFragment(int k) {
         // Required empty public constructor
-    this.k=k;
+        this.k = k;
     }
 
 
@@ -30,12 +31,13 @@ private int k;
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_multimedia, container, false);
         listMulti = (ListView) view.findViewById(R.id.listMulti);
-        adapter_multi = new Adapter_fragment(getdatannoel(),inflater);
+        adapter_multi = new Adapter_fragment(getdatannoel(), inflater);
         listMulti.setAdapter(adapter_multi);
 
         // Inflate the layout for this fragment
         return view;
     }
+
     public ArrayList<String> getdatannoel() {
         ArrayList<String> lsdata = new ArrayList<String>();
         lsdata.add("{@}\n" +

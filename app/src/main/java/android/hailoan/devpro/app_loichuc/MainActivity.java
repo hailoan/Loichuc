@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         init();
-
     }
 
     public void init() {
@@ -39,13 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent m2=new Intent(MainActivity.this,Main2_.class);;
         switch (view.getId()) {
-            case R.id.img_noel: {
-                m2.putExtra("K",2);
+            case R.id.img_valentine: {
+                m2.putExtra("K",1);
                 startActivityForResult(m2,100);
                 break;
             }
-            case R.id.img_valentine: {
-                m2.putExtra("K",1);
+            case R.id.img_noel: {
+                m2.putExtra("K",2);
                 startActivityForResult(m2,100);
                 break;
             }
