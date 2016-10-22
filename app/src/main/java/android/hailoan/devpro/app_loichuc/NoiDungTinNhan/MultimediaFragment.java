@@ -20,9 +20,10 @@ public class MultimediaFragment extends Fragment {
     Adapter_fragment adapter_multi;
     private int k;
 
-    public MultimediaFragment(int k) {
+private ArrayList<String> lsdata;
+    public MultimediaFragment() {
         // Required empty public constructor
-        this.k = k;
+
     }
 
 
@@ -31,11 +32,66 @@ public class MultimediaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_multimedia, container, false);
         listMulti = (ListView) view.findViewById(R.id.listMulti);
-        adapter_multi = new Adapter_fragment(getdatannoel(), inflater);
+        k=getArguments().getInt("K");
+        switch (k) {
+            case 1: {
+                lsdata = getdatavalentine();
+                break;
+            }
+            case 2: {
+                lsdata = getdatannoel();
+                break;
+            }
+            case 3: {
+                lsdata = getdatanewyear();
+                break;
+            }
+            case 4: {
+                lsdata = getdatabirthday();
+                break;
+            }
+            case 5: {
+                lsdata = getdatawomen();
+                break;
+            }
+        }
+        adapter_multi = new Adapter_fragment(lsdata, inflater);
+        adapter_multi.notifyDataSetChanged();
         listMulti.setAdapter(adapter_multi);
 
         // Inflate the layout for this fragment
         return view;
+    }
+    public ArrayList<String> getdatavalentine() {
+        ArrayList<String> lsdata = new ArrayList<String>();
+        lsdata.add("chúc mừng năm mới ty");
+        lsdata.add("Giáng sinh an lành ty");
+        lsdata.add("Merry chrismast ty");
+        return lsdata;
+    }
+
+    public ArrayList<String> getdatanewyear() {
+        ArrayList<String> lsdata = new ArrayList<String>();
+        lsdata.add("chúc mừng năm mới new year");
+        lsdata.add("Giáng sinh an lành new year");
+        lsdata.add("Merry chrismast new yewar");
+        return lsdata;
+    }
+
+    public ArrayList<String> getdatabirthday() {
+        ArrayList<String> lsdata = new ArrayList<String>();
+        lsdata.add("chúc mừng năm mới sinh nhat");
+        lsdata.add("Giáng sinh an lành sinh nhat");
+        lsdata.add("Merry chrismast sinh nhat");
+        return lsdata;
+    }
+
+    public ArrayList<String> getdatawomen() {
+        ArrayList<String> lsdata = new ArrayList<String>();
+        lsdata.add("chúc mừng năm mới phụ nữ");
+        lsdata.add("Giáng sinh an lành phụ nữ");
+        lsdata.add("Merry chrismast phụ nữ");
+        return lsdata;
     }
 
     public ArrayList<String> getdatannoel() {

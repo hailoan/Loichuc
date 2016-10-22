@@ -15,6 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Main2_"></activity>
+
     </application>
 
 </manifest>

@@ -20,6 +20,14 @@ public class Adapter_fragment extends BaseAdapter {
     private ArrayList<String> lsdata;
     private LayoutInflater inflater;
 
+    public ArrayList<String> getLsdata() {
+        return lsdata;
+    }
+
+    public void setLsdata(ArrayList<String> lsdata) {
+        this.lsdata = lsdata;
+    }
+
     public Adapter_fragment(ArrayList<String> lsdata, LayoutInflater inflater) {
         this.lsdata = lsdata;
         this.inflater = inflater;

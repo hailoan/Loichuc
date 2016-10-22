@@ -1,21 +1,14 @@
 package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
 
 
-import android.content.Intent;
-import android.hailoan.devpro.app_loichuc.Adapter_Lisview;
+import android.hailoan.devpro.app_loichuc.Main2_;
 import android.hailoan.devpro.app_loichuc.R;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.style.UpdateLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,30 +16,34 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class TextSMSFragment extends Fragment {
     ListView lsview;
     Adapter_fragment adapter_fragment;
     private ArrayList<String> lsdata;
     private int k;
 
-    public TextSMSFragment(int k) {
+    public TextSMSFragment() {
         // Required empty public constructor
-        this.k = k;
+
     }
 
-
+    private View view;
+private LayoutInflater in;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_text_sm, container, false);
+        view = inflater.inflate(R.layout.fragment_text_sm, container, false);
         lsview = (ListView) view.findViewById(R.id.lsviewtxt);
+        k = getArguments().getInt("K");
+
         switch (k) {
             case 1: {
-                lsdata = getdatannoel();
+                lsdata = getdatavalentine();
                 break;
             }
             case 2: {
-                lsdata = getdatavalentine();
+                lsdata = getdatannoel();
                 break;
             }
             case 3: {
@@ -62,6 +59,7 @@ public class TextSMSFragment extends Fragment {
                 break;
             }
         }
+
         adapter_fragment = new Adapter_fragment(lsdata, inflater);
         adapter_fragment.notifyDataSetChanged();
         lsview.setAdapter(adapter_fragment);
@@ -107,4 +105,10 @@ public class TextSMSFragment extends Fragment {
         lsdata.add("Merry chrismast phụ nữ");
         return lsdata;
     }
+
+public void update(){
+  if (adapter_fragment!=null){
+      adapter_fragment.notifyDataSetChanged();
+  }
+}
 }

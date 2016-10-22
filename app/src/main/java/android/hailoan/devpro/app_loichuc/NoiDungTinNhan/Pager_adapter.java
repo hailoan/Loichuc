@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.style.UpdateLayout;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,35 +17,52 @@ import java.util.ArrayList;
 
 public class Pager_adapter extends FragmentStatePagerAdapter {
     private int k;
-    Fragment frag;
-    public int getK() {
-        return k;
+    private TextSMSFragment frag1;
+    private MultimediaFragment frag2;
+
+    public TextSMSFragment getFrag1() {
+        return frag1;
     }
 
-    public void setK(int k) {
-        this.k = k;
+    public void setFrag1(TextSMSFragment frag1) {
+        this.frag1 = frag1;
+    }
+
+    public MultimediaFragment getFrag2() {
+        return frag2;
+    }
+
+    public void setFrag2(MultimediaFragment frag2) {
+        this.frag2 = frag2;
     }
 
     public Pager_adapter(FragmentManager fm, int k) {
         super(fm);
         this.k = k;
+
     }
 
     @Override
     public Fragment getItem(int position) {
-
         Bundle bundle=new Bundle();
         switch (position) {
             case 0:
+                frag1 = new TextSMSFragment();
 
-                frag = new TextSMSFragment(this.k);
+                bundle.putInt("K",k);
 
-                break;
+                frag1.setArguments(bundle);
+                return frag1;
+
+
             case 1:
-                frag = new MultimediaFragment(this.k);
-                break;
+                frag2 = new MultimediaFragment();
+                bundle.putInt("K",k);
+                frag2.setArguments(bundle);
+                return frag2;
+
         }
-        return frag;
+        return null;
     }
 
     @Override
@@ -64,6 +83,5 @@ public class Pager_adapter extends FragmentStatePagerAdapter {
         }
         return title;
     }
-
-
 }
+
