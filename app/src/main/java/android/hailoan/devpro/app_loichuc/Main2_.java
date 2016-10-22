@@ -84,6 +84,7 @@ public class Main2_ extends AppCompatActivity {
 
 
             }
+            Toast.makeText(Main2_.this, ""+i, Toast.LENGTH_SHORT).show();
          //   ((TextSMSFragment)(f)).update();
 
 //            pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
