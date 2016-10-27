@@ -6,23 +6,23 @@
         android:background="@android:drawable/screen_background_light_transparent"
         android:paddingLeft="10dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="60dp">
 
         <ImageView
             android:id="@+id/img_ls"
-            android:layout_width="@dimen/size_img_rc"
-            android:layout_height="@dimen/size_img_rc"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:gravity="center_vertical"
             android:paddingLeft="10dp"
             android:id="@+id/txt_ls"
             android:layout_toRightOf="@+id/img_ls"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_img_rc"
-            style="@style/text_rc_view"
-            android:textColor="#f5f5f5"
-            android:textStyle="bold"
+            android:layout_height="50dp"
+            android:textSize="16sp"
+            android:textColor="#FF0000"
             android:text="Hai loan" />
     </RelativeLayout>
 </LinearLayout>

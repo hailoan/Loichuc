@@ -17,23 +17,10 @@ import java.util.ArrayList;
 
 public class Pager_adapter extends FragmentStatePagerAdapter {
     private int k;
-    private TextSMSFragment frag1;
-    private MultimediaFragment frag2;
+    ArrayList<Fragment> lsfrgment=new ArrayList<>();
 
-    public TextSMSFragment getFrag1() {
-        return frag1;
-    }
-
-    public void setFrag1(TextSMSFragment frag1) {
-        this.frag1 = frag1;
-    }
-
-    public MultimediaFragment getFrag2() {
-        return frag2;
-    }
-
-    public void setFrag2(MultimediaFragment frag2) {
-        this.frag2 = frag2;
+    public ArrayList<Fragment> getLsfrgment() {
+        return lsfrgment;
     }
 
     public Pager_adapter(FragmentManager fm, int k) {
@@ -44,22 +31,23 @@ public class Pager_adapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        Fragment a;
         Bundle bundle=new Bundle();
+        bundle.putInt("K",k);
         switch (position) {
             case 0:
-                frag1 = new TextSMSFragment();
 
-                bundle.putInt("K",k);
-
-                frag1.setArguments(bundle);
-                return frag1;
+                a=new TextSMSFragment();
+                a.setArguments(bundle);
+                lsfrgment.add(a);
+                return a;
 
 
             case 1:
-                frag2 = new MultimediaFragment();
-                bundle.putInt("K",k);
-                frag2.setArguments(bundle);
-                return frag2;
+                a=new MultimediaFragment();
+                a.setArguments(bundle);
+                lsfrgment.add(a);
+                return a;
 
         }
         return null;

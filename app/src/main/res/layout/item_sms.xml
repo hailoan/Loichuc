@@ -2,16 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_height="wrap_content"
 
-    android:layout_height="wrap_content">
-
+    >
     <TextView
+
         android:id="@+id/txt_rc"
-        style="@style/text_rc_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/sms5"
-        android:text="Hai loan\ncinf \ndej" />
+        android:gravity="center_vertical|center_horizontal"
+        android:text=""
+        android:textColor="#ff0000"
+        android:textSize="14sp" />
 
 
 </RelativeLayout>

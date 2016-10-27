@@ -1,7 +1,9 @@
 package android.hailoan.devpro.app_loichuc;
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
+import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.MultimediaFragment;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.Pager_adapter;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.TextSMSFragment;
 import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_listleft;
@@ -20,6 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,17 +37,21 @@ public class Main2_ extends AppCompatActivity {
     TabLayout tabLayout;
     FragmentManager manager;
     Pager_adapter adapter;
+    LinearLayout main_left;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2_);
+        main_left = (LinearLayout) findViewById(R.id.main_left);
         values = (int) getIntent().getExtras().getSerializable("K");
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_menu_black_24dp);
         toolbar.setTitle("SMS");
-        toolbar.setTitleTextColor(Color.RED);
+        toolbar.setTitleTextColor(Color.WHITE);
         createDrawer();
         createViewPager();
     }
@@ -72,43 +79,16 @@ public class Main2_ extends AppCompatActivity {
 
     private AdapterView.OnItemClickListener on_item_click = new AdapterView.OnItemClickListener() {
         @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            drawerLayout.closeDrawer(ls_view);
-            values = i + 1;
-            adapter = new Pager_adapter(manager, values);
-            adapter.notifyDataSetChanged();
-            pager.invalidate();
-            TextSMSFragment f= (TextSMSFragment) adapter.getItem(0);
-            if (f!=null){
-                f.update();
-
-
-            }
-            Toast.makeText(Main2_.this, ""+i, Toast.LENGTH_SHORT).show();
-         //   ((TextSMSFragment)(f)).update();
-
-//            pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//                @Override
-//                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//                }
-//
-//                @Override
-//                public void onPageSelected(int position) {
-//                    Fragment f=adapter.getItem(position);
-//                    f.onResume();
-//
-//                }
-//
-//                @Override
-//                public void onPageScrollStateChanged(int state) {
-//
-//                }
-//            });
-
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            updatetoolbar(position);
+            values = position + 1;
+            ((TextSMSFragment) ls.get(0)).update(values);
+            ((MultimediaFragment) ls.get(1)).update(values);
+            drawerLayout.closeDrawer(main_left);
         }
     };
 
+    ArrayList<Fragment> ls = new ArrayList<>();
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -124,18 +104,54 @@ public class Main2_ extends AppCompatActivity {
         pager.setAdapter(adapter);
         tabLayout.setupWithViewPager(pager);
         tabLayout.setTabsFromPagerAdapter(adapter);
+        ls = adapter.getLsfrgment();
+        updatetoolbar(values - 1);
     }
 
 
     public ArrayList<item_listleft> getdata() {
         ArrayList<item_listleft> lsdata = new ArrayList<item_listleft>();
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Lễ Tình yêu"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Giáng sinh"));
+        lsdata.add(new item_listleft(R.drawable.icon_valentine, "Lễ Tình yêu"));
+        lsdata.add(new item_listleft(R.drawable.icon_noel, "Giáng sinh"));
 
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Chúc mừng năm mới"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Sinh nhật"));
-        lsdata.add(new item_listleft(R.mipmap.ic_launcher, "Phụ nữ"));
+        lsdata.add(new item_listleft(R.drawable.icon_tet, "Chúc mừng năm mới"));
+        lsdata.add(new item_listleft(R.drawable.icon_sn, "Sinh nhật"));
+        lsdata.add(new item_listleft(R.drawable.icon_women, "Phụ nữ"));
         return lsdata;
     }
 
+    public void updatetoolbar(int k) {
+        switch (k) {
+            case 0: {
+                tabLayout.setBackgroundResource(R.drawable.slide_pink);
+                toolbar.setTitle("Valentine's Day");
+                toolbar.setBackgroundResource(R.drawable.slide_pink);
+                break;
+            }
+            case 1: {
+                toolbar.setTitle("Giáng Sinh");
+                tabLayout.setBackgroundResource(R.drawable.slide_green);
+                toolbar.setBackgroundResource(R.drawable.slide_green);
+                break;
+            }
+            case 2: {
+                toolbar.setTitle("Năm mới");
+                tabLayout.setBackgroundResource(R.drawable.slide_red);
+                toolbar.setBackgroundResource(R.drawable.slide_red);
+                break;
+            }
+            case 3: {
+                toolbar.setTitle("Sinh Nhật");
+                tabLayout.setBackgroundResource(R.drawable.slide_cam);
+                toolbar.setBackgroundResource(R.drawable.slide_cam);
+                break;
+            }
+            case 4: {
+                toolbar.setTitle("Phụ Nữ");
+                tabLayout.setBackgroundResource(R.drawable.slide_tim);
+                toolbar.setBackgroundResource(R.drawable.slide_tim);
+                break;
+            }
+        }
+    }
 }

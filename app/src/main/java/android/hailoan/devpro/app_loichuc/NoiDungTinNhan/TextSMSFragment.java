@@ -3,11 +3,13 @@ package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
 
 import android.hailoan.devpro.app_loichuc.Main2_;
 import android.hailoan.devpro.app_loichuc.R;
+import android.hailoan.devpro.app_loichuc.UpdateFragment;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -17,10 +19,10 @@ import java.util.ArrayList;
  * A simple {@link Fragment} subclass.
  */
 
-public class TextSMSFragment extends Fragment {
+public class TextSMSFragment extends Fragment implements UpdateFragment {
     ListView lsview;
     Adapter_fragment adapter_fragment;
-    private ArrayList<String> lsdata;
+    private ArrayList<ItemListNDsms> lsdata;
     private int k;
 
     public TextSMSFragment() {
@@ -28,15 +30,75 @@ public class TextSMSFragment extends Fragment {
 
     }
 
+    public int getK() {
+        return k;
+    }
+
+    public void setK(int k) {
+        this.k = k;
+    }
+
     private View view;
-private LayoutInflater in;
+    private LayoutInflater in;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_text_sm, container, false);
         lsview = (ListView) view.findViewById(R.id.lsviewtxt);
         k = getArguments().getInt("K");
+        in=inflater;
+        adapter_fragment = new Adapter_fragment(getdata(k), inflater,k);
+        lsview.setAdapter(adapter_fragment);
+        return view;
+    }
+    public ArrayList<ItemListNDsms> getdatavalentine() {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
 
+        lsdata.add(new ItemListNDsms(1,"{@}\n" +
+                "*{@} {@} {@}*\n" +
+                ":* {@} * {@} * ;*\n" +
+                "' @}* {@} *{@}'\n" +
+                "* ; {@} * ;\n" +
+                "\\ \\ \\ | / / /\n" +
+                "\\ \\ Y / /\n" +
+                "\\ | /\n" +
+                "/()\\\n" +
+                "☆♥14-2♥☆\n" +
+                "chuc e valentine vui ve,\n" +
+                "hah phuc naz!\n" +
+                "»(¯°•.†l0v3U!.•°¯)« \n" +
+                "»™ Forever ™«"));
+        lsdata.add(new ItemListNDsms(2,"le tinh ye"));
+        return lsdata;
+    }
+
+    public ArrayList<ItemListNDsms> getdatanewyear() {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
+        lsdata.add(new ItemListNDsms(1,"chuc mung nam moi"));
+        return lsdata;
+    }
+
+    public ArrayList<ItemListNDsms> getdatabirthday() {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
+        lsdata.add(new ItemListNDsms(1,"chuc mung sinh nhat"));
+        return lsdata;
+    }
+
+    public ArrayList<ItemListNDsms> getdatawomen() {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
+        lsdata.add(new ItemListNDsms(1,"chuc mung phu nu"));
+        return lsdata;
+    }
+
+    public ArrayList<ItemListNDsms> getdatannoel() {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
+        lsdata.add(new ItemListNDsms(1,"chuc mung giang sinh"));
+        return lsdata;
+    }
+
+    public ArrayList<ItemListNDsms> getdata(int k) {
+        ArrayList<ItemListNDsms> lsdata = new ArrayList<ItemListNDsms>();
         switch (k) {
             case 1: {
                 lsdata = getdatavalentine();
@@ -59,56 +121,14 @@ private LayoutInflater in;
                 break;
             }
         }
-
-        adapter_fragment = new Adapter_fragment(lsdata, inflater);
-        adapter_fragment.notifyDataSetChanged();
-        lsview.setAdapter(adapter_fragment);
-        return view;
-    }
-
-    public ArrayList<String> getdatannoel() {
-        ArrayList<String> lsdata = new ArrayList<String>();
-        lsdata.add("chúc mừng năm mới");
-        lsdata.add("Giáng sinh an lành");
-        lsdata.add("Merry chrismast");
         return lsdata;
     }
-
-    public ArrayList<String> getdatavalentine() {
-        ArrayList<String> lsdata = new ArrayList<String>();
-        lsdata.add("chúc mừng năm mới ty");
-        lsdata.add("Giáng sinh an lành ty");
-        lsdata.add("Merry chrismast ty");
-        return lsdata;
+    @Override
+    public void update(int k) {
+        if (adapter_fragment!=null){
+            adapter_fragment=new Adapter_fragment(getdata(k),in,k);
+            adapter_fragment.notifyDataSetChanged();
+            lsview.setAdapter(adapter_fragment);
+        }
     }
-
-    public ArrayList<String> getdatanewyear() {
-        ArrayList<String> lsdata = new ArrayList<String>();
-        lsdata.add("chúc mừng năm mới new year");
-        lsdata.add("Giáng sinh an lành new year");
-        lsdata.add("Merry chrismast new yewar");
-        return lsdata;
-    }
-
-    public ArrayList<String> getdatabirthday() {
-        ArrayList<String> lsdata = new ArrayList<String>();
-        lsdata.add("chúc mừng năm mới sinh nhat");
-        lsdata.add("Giáng sinh an lành sinh nhat");
-        lsdata.add("Merry chrismast sinh nhat");
-        return lsdata;
-    }
-
-    public ArrayList<String> getdatawomen() {
-        ArrayList<String> lsdata = new ArrayList<String>();
-        lsdata.add("chúc mừng năm mới phụ nữ");
-        lsdata.add("Giáng sinh an lành phụ nữ");
-        lsdata.add("Merry chrismast phụ nữ");
-        return lsdata;
-    }
-
-public void update(){
-  if (adapter_fragment!=null){
-      adapter_fragment.notifyDataSetChanged();
-  }
-}
 }
