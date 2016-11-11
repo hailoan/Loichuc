@@ -1,25 +1,30 @@
-package android.hailoan.devpro.app_loichuc;
+package android.hailoan.devpro.app_loichuc.Other;
 
 import android.content.Intent;
+import android.hailoan.devpro.app_loichuc.R;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class Main_wait extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_wait);
-        Handler handler=new Handler();
+
+        Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent main_=new Intent(Main_wait.this,MainActivity.class);
+                Intent main_ = new Intent(Main_wait.this, MainActivity.class);
                 Main_wait.this.startActivity(main_);
                 Main_wait.this.finish();
             }
-        },1000);
+        }, 1000);
 
     }
+
+
 }

@@ -4,7 +4,7 @@
     android:layout_height="wrap_content">
     <RelativeLayout
         android:background="@android:drawable/screen_background_light_transparent"
-        android:paddingLeft="10dp"
+        android:paddingLeft="16dp"
         android:layout_width="match_parent"
         android:layout_height="60dp">
 
@@ -16,13 +16,13 @@
 
         <TextView
             android:gravity="center_vertical"
-            android:paddingLeft="10dp"
+            android:paddingLeft="16dp"
             android:id="@+id/txt_ls"
             android:layout_toRightOf="@+id/img_ls"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textSize="16sp"
-            android:textColor="#FF0000"
+            android:textSize="15sp"
+            android:textColor="#60c8f4"
             android:text="Hai loan" />
     </RelativeLayout>
 </LinearLayout>

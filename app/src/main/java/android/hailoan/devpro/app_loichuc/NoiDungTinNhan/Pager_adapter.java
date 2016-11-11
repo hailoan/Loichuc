@@ -4,10 +4,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.text.style.UpdateLayout;
-import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,15 +13,19 @@ import java.util.ArrayList;
 
 public class Pager_adapter extends FragmentStatePagerAdapter {
     private int k;
+    ArrayList<ArrayList<ItemListViewFragment>> lstext,lshinh;
     ArrayList<Fragment> lsfrgment=new ArrayList<>();
 
     public ArrayList<Fragment> getLsfrgment() {
         return lsfrgment;
     }
 
-    public Pager_adapter(FragmentManager fm, int k) {
+    public Pager_adapter(FragmentManager fm, int k,ArrayList<ArrayList<ItemListViewFragment>> lstext,
+                         ArrayList<ArrayList<ItemListViewFragment>> lshinh) {
         super(fm);
         this.k = k;
+        this.lstext=lstext;
+        this.lshinh=lshinh;
 
     }
 
@@ -36,15 +36,14 @@ public class Pager_adapter extends FragmentStatePagerAdapter {
         bundle.putInt("K",k);
         switch (position) {
             case 0:
-
-                a=new TextSMSFragment();
+                a=new TextSMSFragment(lstext);
                 a.setArguments(bundle);
                 lsfrgment.add(a);
                 return a;
 
 
             case 1:
-                a=new MultimediaFragment();
+                a=new MultimediaFragment(lshinh);
                 a.setArguments(bundle);
                 lsfrgment.add(a);
                 return a;

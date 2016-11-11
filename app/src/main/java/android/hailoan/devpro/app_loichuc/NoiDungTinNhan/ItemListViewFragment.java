@@ -6,14 +6,14 @@ import java.io.Serializable;
  * Created by Loan on 10/27/2016.
  */
 
-public class ItemListNDsms implements Serializable{
+public class ItemListViewFragment implements Serializable{
     private int id;
     private String noidung;
 
-    public ItemListNDsms() {
+    public ItemListViewFragment() {
     }
 
-    public ItemListNDsms(int id,String noidung) {
+    public ItemListViewFragment(int id, String noidung) {
         this.noidung = noidung;
         this.id = id;
     }

@@ -1,6 +1,7 @@
-package android.hailoan.devpro.app_loichuc;
+package android.hailoan.devpro.app_loichuc.Other;
 
-import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.item_listleft;
+import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.ItemListView;
+import android.hailoan.devpro.app_loichuc.R;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,10 @@ import java.util.ArrayList;
  * Created by Loan on 9/30/2016.
  */
 public class Adapter_Lisview extends BaseAdapter {
-    private ArrayList<item_listleft> lsdata;
+    private ArrayList<ItemListView> lsdata;
     private LayoutInflater inflater;
 
-    public Adapter_Lisview(ArrayList<item_listleft> lsdata, LayoutInflater inflater) {
+    public Adapter_Lisview(ArrayList<ItemListView> lsdata, LayoutInflater inflater) {
         this.lsdata = lsdata;
         this.inflater = inflater;
     }
@@ -28,7 +29,7 @@ public class Adapter_Lisview extends BaseAdapter {
     }
 
     @Override
-    public item_listleft getItem(int i) {
+    public ItemListView getItem(int i) {
         return lsdata.get(i);
     }
 
@@ -47,7 +48,7 @@ public class Adapter_Lisview extends BaseAdapter {
         }
         txt_nd = (TextView) view.findViewById(R.id.txt_ls);
         img_ls= (ImageView) view.findViewById(R.id.img_ls);
-        item_listleft s = getItem(i);
+        ItemListView s = getItem(i);
         txt_nd.setText(s.getNdung());
         txt_nd.setTag(i);
         img_ls.setImageResource(s.getImg());

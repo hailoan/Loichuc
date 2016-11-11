@@ -1,6 +1,4 @@
-package android.hailoan.devpro.app_loichuc;
-
-import android.support.v4.app.Fragment;
+package android.hailoan.devpro.app_loichuc.Other;
 
 /**
  * Created by Loan on 10/24/2016.
@@ -8,4 +6,5 @@ import android.support.v4.app.Fragment;
 
 public interface UpdateFragment {
     public void update(int k);
+
 }
