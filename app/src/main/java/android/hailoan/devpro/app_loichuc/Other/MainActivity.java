@@ -407,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                sinhnhathinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                phunuhinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
