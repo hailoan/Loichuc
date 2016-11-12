@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1077819778354",
+    "firebase_url": "https://apploichuc.firebaseio.com",
+    "project_id": "apploichuc",
+    "storage_bucket": "apploichuc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077819778354:android:f8566b221fffe036",
+        "android_client_info": {
+          "package_name": "android.hailoan.devpro.app_loichuc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1077819778354-hkd8r0vqc3jeol8h6btf47533kntucje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "android.hailoan.devpro.app_loichuc",
+            "certificate_hash": "D5F28584FF5F30ADE1BDE82AEB3BFB6F4FD56DE3"
+          }
+        },
+        {
+          "client_id": "1077819778354-mgdu38agthi3g01f7fupavc1p21pdot8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwSYuarhozu70HIDK7n_hbHEaTsudsySY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1077819778354-mgdu38agthi3g01f7fupavc1p21pdot8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

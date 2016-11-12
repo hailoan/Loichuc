@@ -59,28 +59,8 @@ public class Adapter_fragment extends BaseAdapter {
         ItemListViewFragment nd = getItem(i);
         txt_nd = (TextView) view.findViewById(R.id.txt_rc);
         txt_nd.setText(nd.getNoidung());
-        switch (check) {
-            case 1: {
-                txt_nd.setBackgroundResource(R.drawable.button_border1);
-                break;
-            }
-            case 2: {
-                txt_nd.setBackgroundResource(R.drawable.button_border1);
-                break;
-            }
-            case 3: {
-                txt_nd.setBackgroundResource(R.drawable.button_border1);
-                break;
-            }
-            case 4: {
-                txt_nd.setBackgroundResource(R.drawable.button_border1);
-                break;
-            }
-            case 5: {
-                txt_nd.setBackgroundResource(R.drawable.button_border1);
-                break;
-            }
-        }
+
+
         txt_nd.setOnClickListener(on_click);
         txt_nd.setTag(i);
         return view;

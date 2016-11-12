@@ -38,6 +38,7 @@ public class MultimediaFragment extends Fragment implements UpdateFragment {
         sinhnhathinh = lsdata.get(3);
         phunuhinh = lsdata.get(4);
         in = inflater;
+
         adapter_multi = new Adapter_fragment(getdata(k), inflater, k);
         listMulti.setAdapter(adapter_multi);
         return view;
