@@ -1,4 +1,4 @@
-package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
+package android.hailoan.devpro.app_loichuc.Other;
 
 /**
  * Created by ThanhHang on 10/13/2016.

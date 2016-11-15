@@ -1,7 +1,7 @@
 package android.hailoan.devpro.app_loichuc.Other;
 
 import android.content.Intent;
-import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.ItemListViewFragment;
+import android.hailoan.devpro.app_loichuc.SMS.ItemSMS;
 import android.hailoan.devpro.app_loichuc.R;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView nammoihinhh;
     private TextView phunuhinhvnh;
     FirebaseDatabase database;
-    ArrayList<ItemListViewFragment> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
-    ArrayList<ItemListViewFragment> noeltext, valentinetext, sinhnhattext, nammoitext, phunutext;
+    ArrayList<ItemSMS> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
+    ArrayList<ItemSMS> noeltext, valentinetext, sinhnhattext, nammoitext, phunutext;
 
     public void kt() {
         noelhinh = new ArrayList<>();
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMStext").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                nammoitext.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                nammoitext.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
 
             }
 
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                nammoihinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                nammoihinh.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
                 Log.w("size nam moi hinh", nammoihinh.size() + "");
             }
 
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMStext").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                noeltext.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                noeltext.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -218,7 +218,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                noelhinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                noelhinh.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMStext").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                valentinetext.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                valentinetext.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -281,7 +281,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                valentinehinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                valentinehinh.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -314,7 +314,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMStext").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                sinhnhattext.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                sinhnhattext.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -344,7 +344,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                sinhnhathinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                sinhnhathinh.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMStext").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                phunutext.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                phunutext.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override
@@ -407,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ref.child("SMShinh").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                phunuhinh.add(new ItemListViewFragment(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
+                phunuhinh.add(new ItemSMS(Integer.valueOf(dataSnapshot.getKey()), dataSnapshot.getValue().toString()));
             }
 
             @Override

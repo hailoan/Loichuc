@@ -1,5 +1,4 @@
-package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
-import android.hailoan.devpro.app_loichuc.Other.UpdateFragment;
+package android.hailoan.devpro.app_loichuc.SMS;
 import android.hailoan.devpro.app_loichuc.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -14,15 +13,15 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MultimediaFragment extends Fragment implements UpdateFragment {
+public class MultimediaSMSFragment extends Fragment implements UpdateFragment {
     ListView listMulti;
-    Adapter_fragment adapter_multi;
+    AdapterFragment adapter_multi;
     private int k;
     FrameLayout framelayout;
     private LayoutInflater in;
-    ArrayList<ArrayList<ItemListViewFragment>> lsdata;
-    ArrayList<ItemListViewFragment> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
-    public MultimediaFragment(ArrayList<ArrayList<ItemListViewFragment>> lsdata) {
+    ArrayList<ArrayList<ItemSMS>> lsdata;
+    ArrayList<ItemSMS> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
+    public MultimediaSMSFragment(ArrayList<ArrayList<ItemSMS>> lsdata) {
         this.lsdata = lsdata;
     }
     @Override
@@ -39,12 +38,12 @@ public class MultimediaFragment extends Fragment implements UpdateFragment {
         phunuhinh = lsdata.get(4);
         in = inflater;
 
-        adapter_multi = new Adapter_fragment(getdata(k), inflater, k);
+        adapter_multi = new AdapterFragment(getdata(k), inflater, k,false);
         listMulti.setAdapter(adapter_multi);
         return view;
     }
-    public ArrayList<ItemListViewFragment> getdata(int k) {
-        ArrayList<ItemListViewFragment> lsdata = new ArrayList<ItemListViewFragment>();
+    public ArrayList<ItemSMS> getdata(int k) {
+        ArrayList<ItemSMS> lsdata = new ArrayList<ItemSMS>();
         switch (k) {
             case 1: {
                 lsdata = valentinehinh;
@@ -73,7 +72,7 @@ public class MultimediaFragment extends Fragment implements UpdateFragment {
     @Override
     public void update(int k) {
         if (adapter_multi != null) {
-            adapter_multi = new Adapter_fragment(getdata(k), in, k);
+            adapter_multi = new AdapterFragment(getdata(k), in, k,false);
             adapter_multi.notifyDataSetChanged();
             listMulti.setAdapter(adapter_multi);
         }

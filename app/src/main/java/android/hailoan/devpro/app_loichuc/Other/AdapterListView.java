@@ -1,6 +1,5 @@
 package android.hailoan.devpro.app_loichuc.Other;
 
-import android.hailoan.devpro.app_loichuc.NoiDungTinNhan.ItemListView;
 import android.hailoan.devpro.app_loichuc.R;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,11 +13,11 @@ import java.util.ArrayList;
 /**
  * Created by Loan on 9/30/2016.
  */
-public class Adapter_Lisview extends BaseAdapter {
+public class AdapterListView extends BaseAdapter {
     private ArrayList<ItemListView> lsdata;
     private LayoutInflater inflater;
 
-    public Adapter_Lisview(ArrayList<ItemListView> lsdata, LayoutInflater inflater) {
+    public AdapterListView(ArrayList<ItemListView> lsdata, LayoutInflater inflater) {
         this.lsdata = lsdata;
         this.inflater = inflater;
     }

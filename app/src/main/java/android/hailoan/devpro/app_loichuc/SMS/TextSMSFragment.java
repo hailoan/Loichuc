@@ -1,7 +1,6 @@
-package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
+package android.hailoan.devpro.app_loichuc.SMS;
 
 
-import android.hailoan.devpro.app_loichuc.Other.UpdateFragment;
 import android.hailoan.devpro.app_loichuc.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,11 +20,11 @@ import java.util.ArrayList;
 public class TextSMSFragment extends Fragment implements UpdateFragment {
     ListView lsview;
     FrameLayout fm_layout;
-    Adapter_fragment adapter_fragment;
+    AdapterFragment adapter_fragment;
     private int k;
-    ArrayList<ArrayList<ItemListViewFragment>> lsdata;
-    ArrayList<ItemListViewFragment> noeltext, valentinetext, sinhnhattext, nammoitext, phunutext;
-    public TextSMSFragment(ArrayList<ArrayList<ItemListViewFragment>> lsdata) {
+    ArrayList<ArrayList<ItemSMS>> lsdata;
+    ArrayList<ItemSMS> noeltext, valentinetext, sinhnhattext, nammoitext, phunutext;
+    public TextSMSFragment(ArrayList<ArrayList<ItemSMS>> lsdata) {
         this.lsdata=lsdata;
     }
     private View view;
@@ -43,13 +42,13 @@ public class TextSMSFragment extends Fragment implements UpdateFragment {
         phunutext=lsdata.get(4);
         k = getArguments().getInt("K");
         in = inflater;
-        adapter_fragment = new Adapter_fragment(getdata(k), inflater, k);
+        adapter_fragment = new AdapterFragment(getdata(k), inflater,k,true);
         lsview.setAdapter(adapter_fragment);
         return view;
     }
 
-    public ArrayList<ItemListViewFragment> getdata(int k) {
-        ArrayList<ItemListViewFragment> lsdata = new ArrayList<ItemListViewFragment>();
+    public ArrayList<ItemSMS> getdata(int k) {
+        ArrayList<ItemSMS> lsdata = new ArrayList<ItemSMS>();
         switch (k) {
             case 1: {
                 lsdata = valentinetext;
@@ -78,7 +77,7 @@ public class TextSMSFragment extends Fragment implements UpdateFragment {
     @Override
     public void update(int k) {
         if (adapter_fragment != null) {
-            adapter_fragment = new Adapter_fragment(getdata(k), in, k);
+            adapter_fragment = new AdapterFragment(getdata(k), in, k,true);
             adapter_fragment.notifyDataSetChanged();
             lsview.setAdapter(adapter_fragment);
         }

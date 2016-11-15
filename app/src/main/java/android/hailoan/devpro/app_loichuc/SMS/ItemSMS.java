@@ -1,4 +1,4 @@
-package android.hailoan.devpro.app_loichuc.NoiDungTinNhan;
+package android.hailoan.devpro.app_loichuc.SMS;
 
 import java.io.Serializable;
 
@@ -6,14 +6,14 @@ import java.io.Serializable;
  * Created by Loan on 10/27/2016.
  */
 
-public class ItemListViewFragment implements Serializable{
+public class ItemSMS implements Serializable{
     private int id;
     private String noidung;
 
-    public ItemListViewFragment() {
+    public ItemSMS() {
     }
 
-    public ItemListViewFragment(int id, String noidung) {
+    public ItemSMS(int id, String noidung) {
         this.noidung = noidung;
         this.id = id;
     }
