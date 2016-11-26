@@ -22,8 +22,14 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="#7b98eef5"
+                android:background="#cd3db2ff"
                 android:minHeight="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/toolbar"
+                android:background="#fff" />
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tab_layout"
@@ -32,8 +38,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/toolbar"
-                android:background="#9498eef5"
-                app:tabSelectedTextColor="#ff00aa"
+                android:background="#be3db1ff"
+                app:tabSelectedTextColor="#f96faf"
                 app:tabTextColor="#fff">
 
             </android.support.design.widget.TabLayout>
@@ -48,6 +54,12 @@
                 android:layout_marginTop="90dp"
                 android:background="#00ffffff" />
         </RelativeLayout>
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:id="@+id/adview"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"></LinearLayout>
     </FrameLayout>
 
     <LinearLayout
@@ -85,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="19dp"
-                    android:text="Nguyen thi hai loan"
+                    android:text="SMS Lời Chúc"
                     android:textColor="#111"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -95,8 +107,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/txt_mail"
-                    android:layout_marginLeft="20dp"
-                    android:text="Abcd@gmail.com"
+                    android:layout_marginLeft="30dp"
+                    android:text="22/11/2016"
                     android:textColor="#111"
                     android:textSize="17sp"
 
@@ -104,7 +116,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
         <ListView
             android:id="@+id/ls_view"
             android:layout_width="320dp"
@@ -113,10 +124,7 @@
             android:background="#fff"
             android:divider="#0ea6c1"
             android:dividerHeight="1dp"
-            android:paddingTop="5dp">
-
-
-        </ListView>
+            android:paddingTop="5dp"></ListView>
 
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

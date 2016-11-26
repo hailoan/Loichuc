@@ -1,4 +1,5 @@
 package android.hailoan.devpro.app_loichuc.SMS;
+
 import android.hailoan.devpro.app_loichuc.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,9 +22,11 @@ public class MultimediaSMSFragment extends Fragment implements UpdateFragment {
     private LayoutInflater in;
     ArrayList<ArrayList<ItemSMS>> lsdata;
     ArrayList<ItemSMS> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
+
     public MultimediaSMSFragment(ArrayList<ArrayList<ItemSMS>> lsdata) {
         this.lsdata = lsdata;
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,10 +41,11 @@ public class MultimediaSMSFragment extends Fragment implements UpdateFragment {
         phunuhinh = lsdata.get(4);
         in = inflater;
 
-        adapter_multi = new AdapterFragment(getdata(k), inflater, k,false);
+        adapter_multi = new AdapterFragment(getdata(k), inflater, k, false);
         listMulti.setAdapter(adapter_multi);
         return view;
     }
+
     public ArrayList<ItemSMS> getdata(int k) {
         ArrayList<ItemSMS> lsdata = new ArrayList<ItemSMS>();
         switch (k) {
@@ -72,7 +76,7 @@ public class MultimediaSMSFragment extends Fragment implements UpdateFragment {
     @Override
     public void update(int k) {
         if (adapter_multi != null) {
-            adapter_multi = new AdapterFragment(getdata(k), in, k,false);
+            adapter_multi = new AdapterFragment(getdata(k), in, k, false);
             adapter_multi.notifyDataSetChanged();
             listMulti.setAdapter(adapter_multi);
         }

@@ -2,7 +2,7 @@
     <string name="app_name">SMS Lời chúc</string>
     <string name="dong">close</string>
     <string name="mo">open</string>
-
+    <string name="facebook_app_id">1711725415813231</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_advanced_path">Advanced: Like a Path</string>

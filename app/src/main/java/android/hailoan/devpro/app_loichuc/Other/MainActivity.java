@@ -1,14 +1,17 @@
 package android.hailoan.devpro.app_loichuc.Other;
 
 import android.content.Intent;
-import android.hailoan.devpro.app_loichuc.SMS.ItemSMS;
 import android.hailoan.devpro.app_loichuc.R;
+import android.hailoan.devpro.app_loichuc.SMS.ItemSMS;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,14 +21,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private TextView noelhinhh;
-    private TextView valentinehinhh;
-    private TextView sinhnhathinhh;
-    private TextView nammoihinhh;
-    private TextView phunuhinhvnh;
+    private TextView noelhinhh, valentinehinhh, sinhnhathinhh, nammoihinhh, phunuhinhvnh;
     FirebaseDatabase database;
     ArrayList<ItemSMS> noelhinh, valentinehinh, sinhnhathinh, nammoihinh, phunuhinh;
     ArrayList<ItemSMS> noeltext, valentinetext, sinhnhattext, nammoitext, phunutext;
+    private LinearLayout adview;
+    private AdView adView;
 
     public void kt() {
         noelhinh = new ArrayList<>();
@@ -45,13 +46,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
         database = FirebaseDatabase.getInstance();
+        init();
+        loadAD();
         kt();
         loaddata();
-        init();
-
     }
 
     public void init() {
+        adview = (LinearLayout) findViewById(R.id.adview);
         noelhinhh = (TextView) findViewById(R.id.img_noel);
         valentinehinhh = (TextView) findViewById(R.id.img_valentine);
         sinhnhathinhh = (TextView) findViewById(R.id.img_sinhnhat);
@@ -63,6 +65,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         nammoihinhh.setOnClickListener(MainActivity.this);
         phunuhinhvnh.setOnClickListener(MainActivity.this);
 
+    }
+
+    public void loadAD() {
+        adView = new AdView(this, "1711725415813231_1713070609012045", AdSize.BANNER_HEIGHT_50);
+        adview.addView(adView);
+        adView.loadAd();
+    }
+
+    @Override
+    protected void onDestroy() {
+        adView.destroy();
+        super.onDestroy();
     }
 
     public void loaddata() {
@@ -84,14 +98,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final Intent m2 = new Intent(MainActivity.this, Main2_.class);
         m2.putExtra("NMtext", nammoitext);
         m2.putExtra("NMhinh", nammoihinh);
-        m2.putExtra("GStext",noeltext);
-        m2.putExtra("GShinh",noelhinh);
-        m2.putExtra("TYtext",valentinetext);
-        m2.putExtra("TYhinh",valentinehinh);
-        m2.putExtra("SNtext",sinhnhattext);
-        m2.putExtra("SNhinh",sinhnhathinh);
-        m2.putExtra("PNtext",phunutext);
-        m2.putExtra("PNhinh",phunuhinh);
+        m2.putExtra("GStext", noeltext);
+        m2.putExtra("GShinh", noelhinh);
+        m2.putExtra("TYtext", valentinetext);
+        m2.putExtra("TYhinh", valentinehinh);
+        m2.putExtra("SNtext", sinhnhattext);
+        m2.putExtra("SNhinh", sinhnhathinh);
+        m2.putExtra("PNtext", phunutext);
+        m2.putExtra("PNhinh", phunuhinh);
         switch (view.getId()) {
             case R.id.img_valentine: {
                 m2.putExtra("K", 1);

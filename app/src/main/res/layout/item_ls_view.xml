@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="16dp"
+    android:id="@+id/nenitem"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <RelativeLayout
-        android:background="@android:drawable/screen_background_light_transparent"
-        android:paddingLeft="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
-
+    android:layout_height="60dp">
         <ImageView
             android:id="@+id/img_ls"
             android:layout_width="50dp"
@@ -22,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="15sp"
-            android:textColor="#60c8f4"
+            android:textColor="#004968"
             android:text="Hai loan" />
-    </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>

@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
-
 /**
  * Created by ThanhHang on 10/13/2016.
  */
@@ -65,10 +64,10 @@ public class PaperViewAdapter extends FragmentStatePagerAdapter {
         String title = "";
         switch (position) {
             case 0:
-                title = "Text ";
+                title = "Chữ";
                 break;
             case 1:
-                title = "Multimedia";
+                title = "Hình";
                 break;
         }
         return title;
